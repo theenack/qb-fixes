@@ -1,0 +1,22 @@
+Config.Model = {
+    `prop_monitor_01a`
+    }
+CreateThread(function()
+    exports['qb-target']:AddTargetModel(Config.Model, {
+        options = {
+            {
+                type = "client",
+                event = "qb-policejob:ToggleDuty",
+                icon = "fas fa-circle-info",
+                label = "Toggle Duty",
+                job = {
+                    ['lspd'] = 0,
+                    ['sasp'] = 0,
+                    ['bcso'] = 0,
+                    ['usms'] = 0,
+                },
+            },
+        },
+        distance = 3.0,
+    })
+end)
